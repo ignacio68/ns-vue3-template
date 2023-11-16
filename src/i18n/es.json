@@ -1,0 +1,18 @@
+{
+  "app.name": "ns-vue3-template",
+ "currency": {
+		"EUR": {
+			"symbol": "€"
+		}
+	},
+	"date": {
+		"format": "DD MMM YYYY"
+	},
+	"time": {
+		"format": "hh:mm"
+	},
+	"locale": "en-EN",
+  "home": {
+    "log-message": "¡Has hecho click en el mensaje!"
+  }
+}

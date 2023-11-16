@@ -1,0 +1,7 @@
+# flow.yaml
+
+appId: org.ignacio68.nsvue3template
+---
+- launchApp
+- assertVisible: ' View Details '
+- tapOn: ' View Details '

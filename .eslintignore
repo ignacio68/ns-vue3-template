@@ -1,0 +1,10 @@
+platforms
+hooks
+coverage
+node_modules
+types
+.git/
+.husky/
+.migration_backup/
+.nyc_output/
+.vscode/

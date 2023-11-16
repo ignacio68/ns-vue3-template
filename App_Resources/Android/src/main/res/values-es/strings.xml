@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="_home_log_message_CwDa8">"¡Has hecho click en el mensaje!"</string>
+  <string name="locale">"en-EN"</string>
+  <string name="_time_format_Z4gIrV">"hh:mm"</string>
+  <string name="_date_format_vcFo3">"DD MMM YYYY"</string>
+  <string name="_currency_EUR_symbol_Z2rc1Pe">"€"</string>
+  <string name="_app_name_1k3Sbz">"ns-vue3-template"</string>
+  <string name="app_name">"ns-vue3-template"</string>
+  <string name="title_activity_kimera">"ns-vue3-template"</string>
+</resources>
