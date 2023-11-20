@@ -1,6 +1,6 @@
 import { sum } from '@/utils/sum';
 
-describe.skip('test utils/sum', () => {
+describe('test utils/sum', () => {
 	test('should return a number', () => {
 		const first = 1;
 		const second = 2;
