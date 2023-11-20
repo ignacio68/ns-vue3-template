@@ -1,4 +1,9 @@
+branches:
+  only:
+    - main
 language: node_js
+node_js: "18"
+os: linux
 
 before_install:
-  - npm i -g npm@version-number
+  - nvm install 18
