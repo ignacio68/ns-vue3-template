@@ -3,6 +3,7 @@
 !*.json
 !*.js
 !*.vue
+*.yml
 .git/
 .husky/
 .migration_backup/

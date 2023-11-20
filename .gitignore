@@ -2,6 +2,7 @@
 hooks/
 node_modules/
 platforms/
+keystore/
 .env
 .env.*
 
@@ -24,6 +25,7 @@ typings/
 coverage/
 .git
 maestro_cloud.sh
+*.zip
 
 # Visual Studio Code
 .vscode/*

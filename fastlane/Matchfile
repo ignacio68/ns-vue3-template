@@ -1,0 +1,15 @@
+# More informations at https://blog.nativescript.org/automatic-nativescript-app-deployments-with-fastlane/
+git_url("https://github.com/<REPOSITORY>/fastlane-certs") # The certificates folder in Github repository
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier("<APP_IDENTIFIER")
+username("APP_DEVELOPER_USERNAME") # Your Apple Developer Portal username
+
+
+team_id('<TEAM_ID>')
+team_name('<TEAM_NAME>')
+
+# The docs are available on https://docs.fastlane.tools/actions/match
