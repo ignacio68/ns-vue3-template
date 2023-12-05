@@ -1,11 +1,29 @@
 {
 	"name": "ns-vue3-template",
-	"main": "src/app.ts",
+	"description": "A minimalist nativescript-vue 3 template with Typescript",
 	"version": "1.0.0",
-	"private": true,
+	"author": "Ignacio López-Amor Pinillos<ignaciolopezamor@gmail.com>",
+	"main": "src/app.ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ignacio68/ns-vue3-template.git"
+	},
+	"keywords": [
+		"Nativescript",
+		"nativescript-vue",
+		"vue 3"
+	],
+	"license": "Apache",
+	"bugs": {
+		"url": "https://github.com/ignacio68/ns-vue3-template/issues"
+	},
+	"homepage": "https://github.com/ignacio68/ns-vue3-template",
 	"scripts": {
+		"test:vue": "vitest  --coverage",
 		"test": "jest --coverage --silent ",
 		"test:e2e": "maestro test flow.yaml",
+		"test:stryker": "npx stryker run",
+		"test:stryker:debug": "npx stryker run --fileLogLevel trace --logLevel debug",
 		"lint": "eslint --ignore-path .eslintignore --ext .ts,.vue",
 		"format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
 		"prepare": "husky install",
@@ -26,35 +44,35 @@
 	"dependencies": {
 		"@nativescript/core": "~8.6.1",
 		"@nativescript/localize": "~5.2.0",
-		"nativescript-vue": "3.0.0-dev.4",
+		"nativescript-vue": "3.0.0-beta.11",
 		"pinia": "~2.1.7",
 		"router-vue-native": "~2.1.0"
 	},
 	"devDependencies": {
-		"@nativescript/android": "8.6.2",
-		"@nativescript/ios": "8.6.3",
 		"@nativescript/tailwind": "~2.0.1",
 		"@nativescript/types": "~8.6.1",
 		"@nativescript/webpack": "~5.0.18",
-		"@types/jest": "~29.5.8",
-		"@types/node": "~20.9.0",
-		"@typescript-eslint/eslint-plugin": "~6.11.0",
-		"@typescript-eslint/parser": "~6.11.0",
-		"@vue/test-utils": "^2.4.2",
-		"@vue/vue3-jest": "^29.2.6",
-		"eslint": "~8.53.0",
+		"@stryker-mutator/core": "^8.0.0",
+		"@stryker-mutator/typescript-checker": "^8.0.0",
+		"@types/node": "~20.9.3",
+		"@typescript-eslint/eslint-plugin": "~6.12.0",
+		"@typescript-eslint/parser": "~6.12.0",
+		"@vitejs/plugin-vue": "^4.5.1",
+		"@vitest/coverage-v8": "^1.0.1",
+		"@vue/test-utils": "^2.4.3",
+		"eslint": "~8.54.0",
 		"eslint-config-prettier": "~9.0.0",
-		"eslint-plugin-prettier": "^5.0.1",
+		"eslint-plugin-prettier": "~5.0.1",
 		"eslint-plugin-vue": "~9.18.1",
-		"husky": "^8.0.3",
-		"jest": "~29.7.0",
-		"jest-environment-jsdom": "^29.7.0",
-		"lint-staged": "^15.1.0",
+		"husky": "~8.0.3",
+		"jsdom": "^23.0.1",
+		"lint-staged": "~15.1.0",
 		"prettier": "~3.1.0",
 		"prettier-plugin-tailwindcss": "~0.5.7",
 		"tailwindcss": "~3.3.5",
 		"ts-jest": "~29.1.1",
 		"ts-node": "^10.9.1",
-		"typescript": "~5.2.2"
+		"typescript": "~5.3.2",
+		"vitest": "^1.0.1"
 	}
 }

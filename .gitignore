@@ -33,3 +33,6 @@ maestro_cloud.sh
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# stryker temp files
+.stryker-tmp
