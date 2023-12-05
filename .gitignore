@@ -36,3 +36,4 @@ maestro_cloud.sh
 
 # stryker temp files
 .stryker-tmp
+reports/

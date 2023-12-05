@@ -19,8 +19,8 @@
 	},
 	"homepage": "https://github.com/ignacio68/ns-vue3-template",
 	"scripts": {
-		"test:vue": "vitest  --coverage",
-		"test": "jest --coverage --silent ",
+		"test": "vitest --run --coverage",
+		"test:watch": "vitest --watch --coverage",
 		"test:e2e": "maestro test flow.yaml",
 		"test:stryker": "npx stryker run",
 		"test:stryker:debug": "npx stryker run --fileLogLevel trace --logLevel debug",
