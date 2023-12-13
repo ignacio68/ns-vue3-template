@@ -1,0 +1,51 @@
+name: Publish app
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish_apps:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - uses: actions/cache@v3
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install six
+        run: pip install six
+
+      - name: Install NativeScript
+        run: |
+          npm install -g nativescript@latest
+          ns doctor
+          ns package-manager set npm
+
+      - name: ns prepare ios
+        run: ns prepare ios --bundle --release --clean --env.production
+
+      - name: fastlane ios beta
+        env:
+          FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          SIGNING_IDENTITY: ${{ secrets.SIGNING_IDENTITY }}
+          LANG: en_US.UTF-8
+          LC_ALL: en_US.UTF-8
+        uses: maierj/fastlane-action@v3.0.0
+        with:
+          lane: 'ios beta'
+          skip-tracking: true

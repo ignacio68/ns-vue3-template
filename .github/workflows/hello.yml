@@ -1,0 +1,15 @@
+name: Say hello
+
+on:
+  push:
+   branches:
+    - main
+
+jobs:
+  hello_word:
+    runs-on: macos-latest
+    steps:
+      - name: Echo the message
+        run: |
+          echo "Hola Ignacio!"
+

@@ -7,15 +7,37 @@ end
 
 platform :ios do
 
+  # iOS Lanes
+
+  private_lane :setup_project do
+    if is_ci?
+      create_keychain(
+        name: "actiontest_keychain",
+        password: "meow",
+        default_keychain: true,
+        unlock: true,
+        timeout: 3600,
+        lock_when_sleeps: false
+      )
+    end
+  end
+
  desc 'Fetch certificates and provisioning profiles'
  lane :certificates do
+  match(type: 'development')
+  match(type: "appstore")
  end
 
  desc 'Build the iOS application.'
  lane :build do
   sh("ns", "prepare", "ios", "--release", "--clean", "--env.production")
 
-    match(type: "appstore")
+    match(
+      type: "appstore",
+      readonly: is_ci,
+      keychain_name:  is_ci? ? "actiontest_keychain" : nil,
+      keychain_password: is_ci? ? "meow" : nil
+      )
 
     gym(
       scheme: "nsvue3template",
