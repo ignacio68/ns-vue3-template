@@ -13,6 +13,7 @@ beforeEach(async () => {
 		},
 	});
 });
+
 describe('Icon Component', async () => {
 	test('mount component', async () => {
 		expect(wrapper.html()).toBeTruthy();

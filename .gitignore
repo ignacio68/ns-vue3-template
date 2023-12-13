@@ -35,5 +35,5 @@ maestro_cloud.sh
 !.vscode/extensions.json
 
 # stryker temp files
-.stryker-tmp
+.stryker-tmp/
 reports/

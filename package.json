@@ -22,8 +22,8 @@
 		"test": "vitest --run --coverage",
 		"test:watch": "vitest --watch --coverage",
 		"test:e2e": "maestro test flow.yaml",
-		"test:stryker": "npx stryker run",
-		"test:stryker:debug": "npx stryker run --fileLogLevel trace --logLevel debug",
+		"test:mutation": "npx stryker run",
+		"test:mutation:debug": "npx stryker run --fileLogLevel trace --logLevel debug",
 		"lint": "eslint --ignore-path .eslintignore --ext .ts,.vue",
 		"format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
 		"prepare": "husky install",
@@ -38,8 +38,8 @@
 		"match:dev": "npm run fastlane -- match development",
 		"match:appstore": "npm run fastlane -- match appstore",
 		"match:adhoc": "npm run fastlane -- match adhoc",
-		"run:android": "ns run android",
-		"run:ios": "ns run ios --no-hmr"
+		"run:android": "ns run android --env.vueDevtools",
+		"run:ios": "ns run ios --env.vueDevtools"
 	},
 	"dependencies": {
 		"@nativescript/core": "~8.6.1",
@@ -54,6 +54,7 @@
 		"@nativescript/webpack": "~5.0.18",
 		"@stryker-mutator/core": "^8.0.0",
 		"@stryker-mutator/typescript-checker": "^8.0.0",
+		"@stryker-mutator/vitest-runner": "^8.0.0",
 		"@types/node": "~20.9.3",
 		"@typescript-eslint/eslint-plugin": "~6.12.0",
 		"@typescript-eslint/parser": "~6.12.0",

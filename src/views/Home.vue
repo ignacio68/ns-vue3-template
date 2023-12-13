@@ -3,7 +3,7 @@ import { ref, computed, onMounted, onUnmounted } from 'nativescript-vue';
 import { useRouter } from 'router-vue-native';
 import { localize } from '@nativescript/localize';
 
-import NSButton from '@/components/NSButton.vue';
+// import NSButton from '@/components/NSButton.vue';
 
 const router = useRouter();
 
@@ -16,7 +16,8 @@ function logMessage() {
 	console.log(localize('home.log-message'));
 }
 
-let interval: any;
+let interval: unknown;
+
 onMounted(() => {
 	console.log('mounted');
 	interval = setInterval(() => counter.value++, 100);
@@ -37,7 +38,6 @@ onUnmounted(() => {
 		<ActionBar>
 			<Label text="Home" class="text-lg font-bold" />
 		</ActionBar>
-
 		<GridLayout rows="*, auto, auto, *" class="px-4">
 			<Label
 				row="1"
