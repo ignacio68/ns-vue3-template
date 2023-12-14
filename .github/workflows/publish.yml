@@ -2,8 +2,8 @@ name: Publish app
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   publish_apps:

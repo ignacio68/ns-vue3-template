@@ -3,7 +3,7 @@ branches:
     - main
 language: node_js
 node_js: "18"
-os: linux
+os: osx
 
 before_install:
   - nvm install 18

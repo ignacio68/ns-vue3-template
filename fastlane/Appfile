@@ -1,4 +1,4 @@
 # See nativescript.config.ts -id
 app_identifier "<your.application.id>"
-apple_id "<YOUR APPLE ID"
-team_id "<YOUR TEAM ID"
+apple_id "<YOUR APPLE ID>"
+team_id "<YOUR TEAM ID>"
